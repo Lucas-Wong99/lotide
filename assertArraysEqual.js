@@ -13,9 +13,9 @@ const eqArrays = function(actual, expected) {
 
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
-    console.log(`✅✅✅You got the green light!: ${actual} === ${expected}`);
+    console.log(`✅✅✅Assertion Passed!: ${actual} === ${expected}`);
   } else {
-    console.log(`❌❌❌Doesn't quite match!: ${actual} !== ${expected}`);
+    console.log(`❌❌❌Assertion Failed!: ${actual} !== ${expected}`);
   }
 };
 
