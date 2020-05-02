@@ -1,22 +1,5 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return `✅✅✅Assertion Passed: ${actual} === ${expected}`;
-  } else {
-    return `❌❌❌Assertion Failed: ${actual} !== ${expected}`;
-  }
-};
-
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   const keysArray1 = Object.keys(object1);
@@ -38,25 +21,23 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-//loop through each object using for in.
-//create a variable assignerd to a boolean probably true
-//if object1 key === object2 key
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// const abc = { a: "1", b: "2", c: "3" };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-const abc = { a: "1", b: "2", c: "3" };
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// const dl = { d: ["2", 3], c: "2" };
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
-const dl = { d: ["2", 3], c: "2" };
+// // console.log(assertEqual(eqObjects(ab, ba), true)); // => true
 
-console.log(assertEqual(eqObjects(ab, ba), true)); // => true
+// // console.log(assertEqual(eqObjects(ab, abc), false));
 
-console.log(assertEqual(eqObjects(ab, abc), false));
+// // console.log(assertEqual(eqObjects(cd, dc), true)); // => true
 
-console.log(assertEqual(eqObjects(cd, dc), true)); // => true
+// // console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
 
-console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
+// // console.log(assertEqual(eqObjects(dl, dc), false)); // => false
 
-console.log(assertEqual(eqObjects(dl, dc), false)); // => false
+module.exports = eqObjects;

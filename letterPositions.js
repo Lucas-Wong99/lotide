@@ -1,23 +1,4 @@
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅✅✅Assertion Passed!: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌❌❌Assertion Failed!: ${actual} !== ${expected}`);
-  }
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 // Create a function called letterPositions and immidiatley assign an empty object to a variable
 // loop through the string
@@ -44,8 +25,6 @@ const letterPositions = function(sentence) {
 // console.log(letterPositions(""));
 // console.log(letterPositions("       "));
 // console.log(letterPositions("rrrrr sssss"));
-
-
 
 assertArraysEqual(letterPositions("lighthouse in the house").l, [0]);
 assertArraysEqual(letterPositions("lighthouse in the house").i, [1, 11]);
