@@ -1,5 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
-
 const takeUntil = function(array, callback) {
   let results = [];
   for (const item of array) {
@@ -12,25 +10,27 @@ const takeUntil = function(array, callback) {
   return results;
 };
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
-console.log(results1);
-assertArraysEqual(results1, [1, 2, 5, 7, 2]);
+module.exports = takeUntil;
 
-console.log('---');
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// const results1 = takeUntil(data1, x => x < 0);
+// console.log(results1);
+// assertArraysEqual(results1, [1, 2, 5, 7, 2]);
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ",");
-console.log(results2);
-assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]);
+// console.log('---');
+
+// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+// const results2 = takeUntil(data2, x => x === ",");
+// console.log(results2);
+// assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]);
 
 
-console.log('---');
+// console.log('---');
 
-const data3 = ["You're", "barn", "is", "big", ",", "My", "been", "is", "honey"];
-const results3 = takeUntil(data3, x => x === undefined);
-console.log(results3);
-assertArraysEqual(results3, ["You're", "barn", "is", "big", ",", "My", "been", "is", "honey"]);
+// const data3 = ["You're", "barn", "is", "big", ",", "My", "been", "is", "honey"];
+// const results3 = takeUntil(data3, x => x === undefined);
+// console.log(results3);
+// assertArraysEqual(results3, ["You're", "barn", "is", "big", ",", "My", "been", "is", "honey"]);
 
 
 
