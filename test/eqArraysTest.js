@@ -1,14 +1,25 @@
 const eqArrays = require('../eqArrays');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
+describe("#eqArrays", () => {
 
-console.log(assertEqual(eqArrays([], []), true));
-console.log(assertEqual(eqArrays([1], [1]), true));
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
-console.log(assertEqual(eqArrays([2, 4, 6], [2, 4 ,6]), true));
-console.log(assertEqual(eqArrays(['5', '10', '15'], ['5', '10', '15']), true));
-console.log(assertEqual(eqArrays(['5', '10', '15'], ['5', 10, '15']), false));
+  it("returns true for ([], [])", () => {
+    assert.isTrue(eqArrays([], []));
+  });
 
+  it("returns true for ([1], [1])", () => {
+    assert.isTrue(eqArrays([1], [1]));
+  });
 
+  it("returns true for ([1, 2, 3], [1, 2, 3])", () => { 
+    assert.isTrue(eqArrays([1, 2, 3], [1, 2, 3]), []); 
+  });
 
+  it("returns true for (['5', '10', '15'], ['5', '10', '15'])", () => { 
+    assert.isTrue(eqArrays(['5', '10', '15'], ['5', '10', '15'])); 
+  });
 
+  it("returns false for (['5', '10', '15'], ['5', 10, '15'])", () => { 
+    assert.isFalse(eqArrays(['5', '10', '15'], ['5', 10, '15'])); 
+  });
+});

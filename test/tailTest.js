@@ -1,9 +1,18 @@
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-const result = tail([1, 3, 5, 7 ,9]);
+describe("#tail", () => {
 
+  it("returns [3, 5, 7 ,9] for [1, 3, 5, 7 ,9]", () => {
+    assert.sameOrderedMembers(tail([1, 3, 5, 7 ,9]), [3, 5, 7 ,9]);
+  });
 
-console.log(assertEqual(result.length, 4));
-console.log(assertEqual(result[2], 7));
-console.log(assertEqual(result[0], 3));
+  it("returns [3, 5] for [1, 3, 5]", () => {
+    assert.sameOrderedMembers(tail([1, 3, 5]), [3, 5]);
+  });
+
+  it("returns [] for [1]", () => { 
+    assert.sameOrderedMembers(tail([1]), []); 
+  });
+});
+
