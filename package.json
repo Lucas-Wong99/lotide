@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@lucaswong17/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "An assortment of functions with varying roles",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
